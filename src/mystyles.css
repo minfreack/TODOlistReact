@@ -13,12 +13,10 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    min-height: 100vh;
     
     
 }
-
-
 
 .header {
     display: flex;
@@ -45,22 +43,93 @@ h1 {
 }
 
 section .main {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
+    margin: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    gap: 1rem
 }
 
-.todo-list {
-    border: 0.1rem solid rgba(236, 236, 236, 0.856);
-    border-radius: 0.25rem;
-    list-style-type: none;
+.task {
+    border-radius: .5rem;
     background-color: rgba(255, 255, 255, 0.938);
     padding: 1rem;
-    padding-left: 5rem;
-    padding-right: 5rem;
-    box-shadow: .5px .5px #333;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-left: .4rem solid rgba(62, 161, 219, 0.712);
+    height: max-content;
 }
+
+.completed {
+    border-left: .4rem solid #ccc;
+}
+
+.view {
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
+    align-items: center;
+}
+
+.task-name {
+    text-overflow: ellipsis;
+    overflow: auto;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.completed .task-label {
+    color: #ccc;
+    text-decoration: line-through;
+}
+
+.checkbox {
+    cursor: pointer;
+    margin-right: 1rem;
+    display: flex;
+  }
+  
+  .checkbox:hover .checkbox__check {
+    background: rgba(61, 161, 219, 0.714);
+  }
+  
+  .checkbox__input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  
+  .checkbox__input:checked + .checkbox__check {
+    background: #ccc;
+    stroke-dashoffset: 0;
+  }
+  
+  .checkbox__check {
+    border: 0.2rem solid rbg(62,161,219);
+    background: white;
+    stroke: #f9f9f9;
+    stroke-dasharray: 25;
+    stroke-dashoffset: 25;
+    stroke-linecap: round;
+    stroke-width: 0.2rem; 
+    border-radius: 0.2rem;
+    fill: none;
+    transition: background 0.4s, stroke-dashoffset 0.6s;
+  }
+
+
+
+.destroy {
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+.destroy:hover {
+	color: #af5b5e;
+}
+
+ .destroy:after {
+	content: '×';
+}
+
 
 .is-empty {
     display: none;
@@ -98,66 +167,3 @@ section .main {
     background-color: transparent;
     color: white;
 }
-
-.completed .task {
-    color: #ccc;
-    text-decoration: line-through;
-}
-
-.checkbox {
-    cursor: pointer;
-    margin-right: 1rem;
-  }
-  
-  .checkbox:hover .checkbox__check {
-    background: rgba(62, 161, 219, 0.712);
-  }
-  
-  .checkbox__input {
-    width: 0;
-    height: 0;
-    opacity: 0;
-  }
-  
-  .checkbox__input:checked + .checkbox__check {
-    background: rgb(62,161,219);
-    stroke-dashoffset: 0;
-  }
-  
-  .checkbox__check {
-    border: 0.2rem solid rbg(62,161,219);
-    background: white;
-    stroke: #f9f9f9;
-    stroke-dasharray: 25;
-    stroke-dashoffset: 25;
-    stroke-linecap: round;
-    stroke-width: 0.2rem; 
-    border-radius: 0.2rem;
-    fill: none;
-    transition: background 0.4s, stroke-dashoffset 0.6s;
-  }
-
-.view {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-.view .task {
-    margin-right: 12rem;
-}
-
-.destroy {
-    outline: none;
-    border: none;
-    background-color: transparent;
-}
-.destroy:hover {
-	color: #af5b5e;
-}
-
- .destroy:after {
-	content: '×';
-}
-

@@ -82,16 +82,15 @@ export const TaskGrid = () => {
 			<header className="header">
 				<h1>To do list</h1>
                 <form onSubmit={addTask}>
-				<input className="new-todo" value={inputTask} onChange={handleOnChange} placeholder="¿Qué harás hoy?" autoFocus></input>
+				<input className="new-todo" value={inputTask} onChange={handleOnChange} placeholder="¿Qué harás hoy? :)" autoFocus></input>
                 </form>
 			</header>
 			<section className="main">
-				<ul className={`${tasks.length>0 ? 'todo-list' : 'isEmpty'}`} >
                     {
                         tasks?.map( ( task , index) => <Task  key={index} index={index} task={task} handleChecked={handleChecked} deleteTask={deleteTask} />
                         )
                     }
-				</ul>
+
 			</section>
 			<footer className="footer">
 				<span className="todo-count"><strong>{tasks.filter( task => task.completed === false).length}</strong> pendiente(s)</span>
