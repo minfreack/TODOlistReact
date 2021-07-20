@@ -95,7 +95,7 @@ export const TaskGrid = () => {
 				<span className="todo-count"><strong>{tasks.filter( task => task.completed === false).length}</strong> pendiente(s)</span>
 				<ul className="filters">
 					<li>
-						<a className={`filtro ${selectedButton ==='all' && 'selected' }`} id="all" href="/" onClick={() => {allTasks(); setSelectedButton('all');}}>Todos</a>
+						<a className={`filtro ${selectedButton ==='all' && 'selected' }`} id="all" href="/To-Do-List/" onClick={() => {allTasks(); setSelectedButton('all');}}>Todos</a>
 					</li>
 					<li>
 						<a className={`filtro ${selectedButton ==='pendings' && 'selected' }`} id="pendings" href="#pendings" onClick={ () => {pendingTasks();setSelectedButton('pendings') }} >Pendientes</a>
