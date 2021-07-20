@@ -77,7 +77,6 @@ export const TaskGrid = () => {
     }
 
     return (
-        <div>
             <section className="todoapp">
 			<header className="header">
 				<h1>To do list</h1>
@@ -108,6 +107,5 @@ export const TaskGrid = () => {
 				<button className="clear-completed" id="delete" href="#deleteCompleted" onClick={deleteCompleteTasks}>Borrar completados</button>
 			</footer>
 		</section>
-        </div>
     )
 }

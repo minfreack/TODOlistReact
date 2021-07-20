@@ -167,3 +167,31 @@ section .main {
     background-color: transparent;
     color: white;
 }
+
+@media (max-width: 1280px) {
+    section .main {
+        margin: 2rem;
+        grid-template-columns: repeat(3, 32%);
+    }
+  }
+  
+  @media (max-width: 900px) {
+    section .main {
+        margin: 2rem;
+        grid-template-columns: repeat(3, 32%);
+    }
+  }
+  
+  @media (max-width: 800px) {
+    section .main {
+        margin: 2rem;
+        grid-template-columns: repeat(2, 49%);
+    }
+  }
+  
+  @media (max-width: 540px) {
+    section .main {
+        margin: 2rem;
+        grid-template-columns: repeat(2, 47%);
+    }
+  }
